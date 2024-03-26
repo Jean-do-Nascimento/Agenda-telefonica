@@ -1,6 +1,6 @@
 const form = document.getElementById('form')
 const nome = []
-const numero = []
+const numeros = []
 
 let linhas = '';
 addEventListener('submit', function (e) {
@@ -15,11 +15,11 @@ function adicionaLinhas() {
     const inputNome = document.getElementById('inputNome')
     const inputNumero = document.getElementById('inputNumero')
 
-    if (nome.includes(inputNome.value)) {
-        alert(`O contato ${inputNome.value} já existe.`)
+    if (numeros.includes(inputNumero.value)) {
+        alert('O Número cadastrado já existe.')
     } else {
         nome.push(inputNome.value);
-        numero.push(parseFloat(inputNumero.value));
+        numeros.push(inputNumero.value);
 
         let linha = '<tr>'
         linha += `<td>${inputNome.value}</td>`
@@ -28,7 +28,6 @@ function adicionaLinhas() {
 
         linhas += linha
     }
-
     inputNome.value = '';
     inputNumero.value = '';
 }
